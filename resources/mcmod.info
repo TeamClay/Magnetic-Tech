@@ -1,0 +1,16 @@
+[
+{
+  "modid": "MagneticTech",
+  "name": "Magnetic-Tech",
+  "description": "Magnetic revolution!",
+  "version": "1.01.05",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["TeamClay"],
+  "credits": "TeamClay",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

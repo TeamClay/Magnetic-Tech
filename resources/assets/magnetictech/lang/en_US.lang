@@ -1,0 +1,17 @@
+//Blocks
+tile.magnetiten.name=Magnetite-N
+tile.magnetites.name=Magnetite-S
+tile.septummagnet.name=Septum magnet Iron Ore
+tile.boron_ore.name=Boron Ore
+tile.neodymium_ore.name=Neodymium Ore
+
+
+//Items
+item.magnets.name=Magnets-S
+item.magnetn.name=Magnets-N
+item.septummagnetironingot.name=Septum Magnet Iron Ingot
+item.boron_dust.name=Boron Powder
+item.neodymium_dust.name=Neodymium Powder
+
+//Tabs
+itemGroup.MT-BASE=Magnetic Tech | Base

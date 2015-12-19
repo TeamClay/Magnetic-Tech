@@ -1,0 +1,18 @@
+//Blocks
+tile.magnetiten.name=N磁极磁铁矿
+tile.magnetites.name=S磁极磁铁矿
+tile.septummagnet.name=隔磁铁 铁矿
+tile.boron_ore.name=硼矿
+tile.neodymium_ore.name=钕矿
+
+
+//Items
+item.magnets.name=S磁极磁铁
+item.magnetn.name=N磁极磁铁
+item.septummagnetironingot.name=隔磁铁 铁锭
+item.boron_dust.name=硼粉
+item.neodymium_dust.name=钕粉
+
+
+//Tabs
+itemGroup.MT-BASE=磁力科技 | 基础
