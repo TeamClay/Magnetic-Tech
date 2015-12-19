@@ -12,6 +12,8 @@ item.magnetn.name=Magnets-N
 item.septummagnetironingot.name=Septum Magnet Iron Ingot
 item.boron_dust.name=Boron Powder
 item.neodymium_dust.name=Neodymium Powder
+item.septum_magnet_sword.name=Septum Magnet Iron Sword
+item.septum_magnet_pickaxe.name=Septum Magnet Iron Pickaxe
 
 //Tabs
 itemGroup.MT-BASE=Magnetic Tech | Base

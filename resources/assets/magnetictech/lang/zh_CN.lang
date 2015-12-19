@@ -12,6 +12,8 @@ item.magnetn.name=N磁极磁铁
 item.septummagnetironingot.name=隔磁铁 铁锭
 item.boron_dust.name=硼粉
 item.neodymium_dust.name=钕粉
+item.septum_magnet_sword.name=隔磁铁 铁剑
+item.septum_magnet_pickaxe.name=隔磁铁 铁镐
 
 
 //Tabs
