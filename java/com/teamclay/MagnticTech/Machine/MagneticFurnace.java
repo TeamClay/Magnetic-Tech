@@ -1,23 +1,34 @@
 package com.teamclay.MagnticTech.Machine;
 
+import java.util.Random;
+
 import com.teamclay.MagnticTech.MagneticTech;
-import com.teamclay.MagnticTech.Block.MagneticTileEntity;
-import com.teamclay.MagnticTech.gui.MagneticFurnaceGui;
+//import com.teamclay.MagnticTech.TileEntity.TileEntityMagneticFurnace;
+
+
+import com.teamclay.MagnticTech.TileEntity.TileEntityMagneticFurnace;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.BlockFurnace;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.inventory.Container;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.IIcon;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
@@ -27,6 +38,9 @@ public class MagneticFurnace extends BlockContainer{
 	public static IIcon icon3;
 	public static IIcon icon4;
 	public static IIcon icon5;
+	private final static boolean b = true;
+	private final Random field_149933_a = new Random();
+	private static boolean field_149934_M;
 	public MagneticFurnace(){
 		super(Material.rock);
 		this.setBlockName("magnetic_furnace");
@@ -97,16 +111,28 @@ public class MagneticFurnace extends BlockContainer{
 //			icon5 = icon4;
 //		}
 //	}
+//	@Override
+//	public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
+//		return new MagneticTileEntity();
+//	}
+//	@Override
+//	public boolean onBlockActivated(World p_149727_1_, int p_149727_2_, int p_149727_3_, int p_149727_4_, EntityPlayer p_149727_5_, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_){
+//		if(p_149727_1_.isRemote){
+//			return true;
+//		}
+////		Minecraft.getMinecraft().displayGuiScreen(new MagneticFurnaceGui(p_149727_5_.inventory,((MagneticTileEntity) (p_149727_1_.getTileEntity(p_149727_2_, p_149727_3_, p_149727_4_)))));
+//		return true;
+//	}
 	@Override
 	public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
-		return new MagneticTileEntity();
+		return new TileEntityMagneticFurnace();
 	}
 	@Override
-	public boolean onBlockActivated(World p_149727_1_, int p_149727_2_, int p_149727_3_, int p_149727_4_, EntityPlayer p_149727_5_, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_){
-		if(p_149727_1_.isRemote){
-			return true;
-		}
-		Minecraft.getMinecraft().displayGuiScreen(new MagneticFurnaceGui(p_149727_5_.inventory,((MagneticTileEntity) (p_149727_1_.getTileEntity(p_149727_2_, p_149727_3_, p_149727_4_)))));
+	public boolean onBlockActivated(World par1World, int par2, int par3,
+            int par4, EntityPlayer par5EntityPlayer, int par6, float par7,
+            float par8, float par9) {
+		// TODO Auto-generated method stub
+		par5EntityPlayer.openGui(MagneticTech.instance, 10, par1World, par2, par3, par4);
 		return true;
 	}
 }

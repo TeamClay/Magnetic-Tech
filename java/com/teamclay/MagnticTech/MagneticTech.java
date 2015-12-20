@@ -22,7 +22,10 @@ import com.teamclay.MagnticTech.Item.ItemSeptumMagnetShovel;
 import com.teamclay.MagnticTech.Item.ItemSeptumMagnetSword;
 import com.teamclay.MagnticTech.Item.ItemWrench;
 import com.teamclay.MagnticTech.Machine.MagneticFurnace;
-import com.teamclay.MagnticTech.gui.MagneticFurnaceGui;
+//import com.teamclay.MagnticTech.TileEntity.TileEntityMagneticFurnace;
+
+import com.teamclay.MagnticTech.TileEntity.TileEntityMagneticFurnace;
+import com.teamclay.MagnticTech.gui.GuiHandler;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -54,11 +57,13 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 
 @Mod(modid="MagneticTech", name="Magnetic-Tech", version="1.01.05")
 public class MagneticTech {
+	public static MagneticTech instance;
 	public static Block Magnetite_N;
 	public static Block Magnetite_S;
 	public static Block Septum_Magnet;
@@ -78,12 +83,14 @@ public class MagneticTech {
 	public static CreativeTabs MT_BASE = null;
 	public static Block Machine_MagneticFurnace;
 	public static List<String> machines = new ArrayList<String>();
+	
 	@EventHandler
 	public void preLoad(FMLPreInitializationEvent event)
 	{
 		RegisterCreativeTabs();
 		RegisterItem();
 		RegisterBlock();
+		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 	}
 
 	@EventHandler
@@ -105,6 +112,9 @@ public class MagneticTech {
 		OreDictionary.registerOre("oreSeptumMagnet", this.Septum_Magnet);
 		OreDictionary.registerOre("oreBoron", this.Boron_Ore);
 	}
+	public void RegisterTileEntity(){
+		GameRegistry.registerTileEntity(TileEntityMagneticFurnace.class, "MagneticFurnace");
+	}
 	public void RegisterBlock(){
 		Magnetite_N = new BlockMagnetite_N();
 		Magnetite_S = new BlockMagnetite_S();
@@ -118,6 +128,7 @@ public class MagneticTech {
 		GameRegistry.registerBlock(Boron_Ore, "boron_ore");
 		GameRegistry.registerBlock(Neodymium_ore, "neodymium_ore");
 		GameRegistry.registerBlock(Machine_MagneticFurnace, "magnetic_furnace");
+		
 		machines.add(this.Machine_MagneticFurnace.getUnlocalizedName());
 	}
 	public void RegisterItem(){
