@@ -6,14 +6,22 @@ tile.boron_ore.name=硼矿
 tile.neodymium_ore.name=钕矿
 
 
+//Machines
+tile.magnetic_furnace.name=磁场炉
+
+
 //Items
 item.magnets.name=S磁极磁铁
 item.magnetn.name=N磁极磁铁
 item.septummagnetironingot.name=隔磁铁 铁锭
 item.boron_dust.name=硼粉
 item.neodymium_dust.name=钕粉
+item.wrench.name=隔磁铁 扳手
 item.septum_magnet_sword.name=隔磁铁 铁剑
 item.septum_magnet_pickaxe.name=隔磁铁 铁镐
+item.septum_magnet_axe.name=隔磁铁 铁斧
+item.septum_magnet_shovel.name=隔磁铁 铁铲
+item.septum_magnet_hoe.name=隔磁铁 铁锄
 
 
 //Tabs

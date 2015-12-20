@@ -10,7 +10,6 @@ public class ItemSeptumMagnetIronIngot extends Item{
 		super();
 		this.setMaxStackSize(16);
 		this.setFull3D();
-		this.setCreativeTab(MagneticTech.MT_BASE);
 		this.setTextureName("magnetictech:septum_magnet_iron_ingot");
 		this.setHasSubtypes(false);
 		this.setUnlocalizedName("septummagnetironingot");
